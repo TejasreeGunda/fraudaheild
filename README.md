@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+Safe Transaction are on your way!
 
-TODO: Document your project here
+No more frauds.
