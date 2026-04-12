@@ -33,22 +33,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthProvider>
-          <NotificationProvider>
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/" element={<ProtectedRoute><AppLayout><Index /></AppLayout></ProtectedRoute>} />
-              <Route path="/analyzer" element={<ProtectedRoute><AppLayout><TransactionAnalyzer /></AppLayout></ProtectedRoute>} />
-              <Route path="/history" element={<ProtectedRoute><AppLayout><TransactionHistory /></AppLayout></ProtectedRoute>} />
-              <Route path="/analytics" element={<ProtectedRoute><AppLayout><Analytics /></AppLayout></ProtectedRoute>} />
-              <Route path="/insights" element={<ProtectedRoute><AppLayout><ModelInsights /></AppLayout></ProtectedRoute>} />
-              <Route path="/simulation" element={<ProtectedRoute><AppLayout><RealTimeSimulation /></AppLayout></ProtectedRoute>} />
-              <Route path="/settings" element={<ProtectedRoute><AppLayout><Settings /></AppLayout></ProtectedRoute>} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </NotificationProvider>
-        </AuthProvider>
+        <NotificationProvider>
+          <Routes>
+            <Route path="/" element={<AppLayout><Index /></AppLayout>} />
+            <Route path="/analyzer" element={<AppLayout><TransactionAnalyzer /></AppLayout>} />
+            <Route path="/history" element={<AppLayout><TransactionHistory /></AppLayout>} />
+            <Route path="/analytics" element={<AppLayout><Analytics /></AppLayout>} />
+            <Route path="/insights" element={<AppLayout><ModelInsights /></AppLayout>} />
+            <Route path="/simulation" element={<AppLayout><RealTimeSimulation /></AppLayout>} />
+            <Route path="/settings" element={<AppLayout><Settings /></AppLayout>} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </NotificationProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
