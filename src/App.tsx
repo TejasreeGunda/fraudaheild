@@ -10,6 +10,7 @@ import AppNavbar from "@/components/AppNavbar";
 import Index from "./pages/Index";
 import TransactionAnalyzer from "./pages/TransactionAnalyzer";
 import ModelInsights from "./pages/ModelInsights";
+import Analytics from "./pages/Analytics";
 import RealTimeSimulation from "./pages/RealTimeSimulation";
 import TransactionHistory from "./pages/TransactionHistory";
 import Settings from "./pages/Settings";
@@ -42,6 +43,7 @@ const App = () => (
               <Route path="/" element={<ProtectedRoute><AppLayout><Index /></AppLayout></ProtectedRoute>} />
               <Route path="/analyzer" element={<ProtectedRoute><AppLayout><TransactionAnalyzer /></AppLayout></ProtectedRoute>} />
               <Route path="/history" element={<ProtectedRoute><AppLayout><TransactionHistory /></AppLayout></ProtectedRoute>} />
+              <Route path="/analytics" element={<ProtectedRoute><AppLayout><Analytics /></AppLayout></ProtectedRoute>} />
               <Route path="/insights" element={<ProtectedRoute><AppLayout><ModelInsights /></AppLayout></ProtectedRoute>} />
               <Route path="/simulation" element={<ProtectedRoute><AppLayout><RealTimeSimulation /></AppLayout></ProtectedRoute>} />
               <Route path="/settings" element={<ProtectedRoute><AppLayout><Settings /></AppLayout></ProtectedRoute>} />

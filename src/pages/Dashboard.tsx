@@ -1,10 +1,7 @@
-import { Shield, AlertTriangle, Activity, TrendingUp, DollarSign, Eye } from "lucide-react";
+import { Shield, AlertTriangle, Activity, DollarSign, Eye, BarChart3 } from "lucide-react";
 import StatCard from "@/components/StatCard";
-import FraudDistributionChart from "@/components/charts/FraudDistributionChart";
-import TransactionScatterChart from "@/components/charts/TransactionScatterChart";
-import ModelComparisonChart from "@/components/charts/ModelComparisonChart";
-import TimeSeriesChart from "@/components/charts/TimeSeriesChart";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   return (
@@ -31,23 +28,36 @@ export default function Dashboard() {
         <StatCard title="Model Accuracy" value="99.8%" icon={Shield} variant="primary" delay={0.25} subtitle="XGBoost — Best performer" />
       </div>
 
-      {/* Charts Row 1 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <FraudDistributionChart />
-        <TransactionScatterChart />
-      </div>
-
-      {/* Charts Row 2 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <ModelComparisonChart />
-        <TimeSeriesChart />
-      </div>
+      {/* CTA to Analytics */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <Link
+          to="/analytics"
+          className="glass-card-hover p-6 flex items-center justify-between group block"
+        >
+          <div className="flex items-center gap-4">
+            <div className="p-3 rounded-xl bg-primary/15">
+              <BarChart3 className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-foreground">View Analytics & Charts</h3>
+              <p className="text-sm text-muted-foreground">Explore fraud distribution, transaction patterns, and model comparisons</p>
+            </div>
+          </div>
+          <span className="text-primary font-medium text-sm group-hover:translate-x-1 transition-transform">
+            Open →
+          </span>
+        </Link>
+      </motion.div>
 
       {/* Story Footer */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        transition={{ delay: 0.6 }}
         className="glass-card p-8 text-center neon-glow"
       >
         <Eye className="h-8 w-8 text-primary mx-auto mb-3" />

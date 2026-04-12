@@ -1,12 +1,13 @@
 import { NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { Shield, BarChart3, Search, Radio, TrendingUp, History, Settings } from "lucide-react";
+import { Shield, BarChart3, Search, Radio, TrendingUp, History, Settings, PieChart } from "lucide-react";
 import { motion } from "framer-motion";
 import NotificationCenter from "@/components/NotificationCenter";
 import { useAuth } from "@/contexts/AuthContext";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: BarChart3 },
+  { to: "/analytics", label: "Analytics", icon: PieChart },
   { to: "/analyzer", label: "Analyzer", icon: Search },
   { to: "/history", label: "History", icon: History },
   { to: "/insights", label: "Insights", icon: TrendingUp },
