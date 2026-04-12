@@ -12,8 +12,7 @@ import Analytics from "./pages/Analytics";
 import RealTimeSimulation from "./pages/RealTimeSimulation";
 import TransactionHistory from "./pages/TransactionHistory";
 import Settings from "./pages/Settings";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import NotFound from "./pages/NotFound";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

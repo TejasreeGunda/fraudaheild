@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { Shield, BarChart3, Search, Radio, TrendingUp, History, Settings, PieChart } from "lucide-react";
 import { motion } from "framer-motion";
 import NotificationCenter from "@/components/NotificationCenter";
-import { useAuth } from "@/contexts/AuthContext";
 
 const navItems = [
   { to: "/", label: "Dashboard", icon: BarChart3 },
