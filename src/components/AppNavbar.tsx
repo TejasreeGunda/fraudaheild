@@ -15,7 +15,6 @@ const navItems = [
 
 export default function AppNavbar() {
   const location = useLocation();
-  const { user } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-t-0 border-x-0 rounded-none">
