@@ -17,6 +17,13 @@ import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
+import BankAccount from "./pages/BankAccount";
+import SmartAlerts from "./pages/SmartAlerts";
+import LocationDetection from "./pages/LocationDetection";
+import BehavioralAnalysis from "./pages/BehavioralAnalysis";
+import ExplainableAI from "./pages/ExplainableAI";
+import UserActions from "./pages/UserActions";
+import AIChatbot from "./pages/AIChatbot";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +54,13 @@ const App = () => (
               <Route path="/insights" element={<ProtectedRoute><AppLayout><ModelInsights /></AppLayout></ProtectedRoute>} />
               <Route path="/simulation" element={<ProtectedRoute><AppLayout><RealTimeSimulation /></AppLayout></ProtectedRoute>} />
               <Route path="/settings" element={<ProtectedRoute><AppLayout><Settings /></AppLayout></ProtectedRoute>} />
+              <Route path="/bank-account" element={<ProtectedRoute><AppLayout><BankAccount /></AppLayout></ProtectedRoute>} />
+              <Route path="/smart-alerts" element={<ProtectedRoute><AppLayout><SmartAlerts /></AppLayout></ProtectedRoute>} />
+              <Route path="/location" element={<ProtectedRoute><AppLayout><LocationDetection /></AppLayout></ProtectedRoute>} />
+              <Route path="/behavioral" element={<ProtectedRoute><AppLayout><BehavioralAnalysis /></AppLayout></ProtectedRoute>} />
+              <Route path="/explainable-ai" element={<ProtectedRoute><AppLayout><ExplainableAI /></AppLayout></ProtectedRoute>} />
+              <Route path="/user-actions" element={<ProtectedRoute><AppLayout><UserActions /></AppLayout></ProtectedRoute>} />
+              <Route path="/ai-chatbot" element={<ProtectedRoute><AppLayout><AIChatbot /></AppLayout></ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </NotificationProvider>
