@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Shield, Mail, Lock, ArrowRight, Eye, EyeOff } from "lucide-react";
+import { Shield, Mail, Lock, ArrowRight, Eye, EyeOff, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/contexts/AuthContext";
@@ -12,7 +12,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
+  const { signIn, signInAsGuest } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -26,6 +26,12 @@ export default function Login() {
     } else {
       navigate("/");
     }
+  };
+
+  const handleGuestLogin = () => {
+    signInAsGuest();
+    toast({ title: "Welcome, Guest!", description: "You're browsing in guest mode." });
+    navigate("/");
   };
 
   return (
@@ -95,6 +101,20 @@ export default function Login() {
             )}
           </Button>
         </form>
+
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border" /></div>
+          <div className="relative flex justify-center text-xs"><span className="bg-card px-3 text-muted-foreground">or</span></div>
+        </div>
+
+        <Button
+          type="button"
+          variant="outline"
+          onClick={handleGuestLogin}
+          className="w-full h-12 text-base font-semibold border-border bg-muted/30 text-foreground hover:bg-muted/60 hover:border-primary/40"
+        >
+          <div className="flex items-center gap-2"><UserCheck className="h-4 w-4" /> Continue as Guest</div>
+        </Button>
 
         <p className="text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{" "}
