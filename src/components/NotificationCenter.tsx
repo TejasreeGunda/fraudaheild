@@ -44,7 +44,7 @@ export default function NotificationCenter() {
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              className="absolute right-0 top-full mt-2 w-80 glass-card z-50 overflow-hidden"
+              className="absolute right-0 top-full mt-2 w-80 z-50 overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40"
             >
               <div className="p-3 border-b border-border/50 flex items-center justify-between">
                 <p className="text-sm font-semibold text-foreground">Notifications</p>
