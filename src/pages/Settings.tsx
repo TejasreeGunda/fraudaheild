@@ -18,7 +18,7 @@ const tabs = [
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("profile");
-  const { user, signOut } = useAuth();
+  const { user, signOut, isGuest } = useAuth();
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -78,8 +78,8 @@ export default function Settings() {
                   <User className="h-8 w-8 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{user?.email || "User"}</p>
-                  <p className="text-sm text-muted-foreground">Fraud Analyst</p>
+                  <p className="font-semibold text-foreground">{isGuest ? "Guest User" : (user?.email || "User")}</p>
+                  <p className="text-sm text-muted-foreground">{isGuest ? "Guest Mode" : "Fraud Analyst"}</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -89,7 +89,7 @@ export default function Settings() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">Email</label>
-                  <Input value={user?.email || ""} readOnly className="bg-muted/30 border-border opacity-60" />
+                  <Input value={isGuest ? "guest@fraudshield.app" : (user?.email || "")} readOnly className="bg-muted/30 border-border opacity-60" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-muted-foreground">Role</label>
