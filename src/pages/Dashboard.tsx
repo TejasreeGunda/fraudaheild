@@ -25,7 +25,7 @@ export default function Dashboard() {
         <StatCard title="Total Transactions" value="284,807" icon={Activity} variant="primary" delay={0.1} trend={{ value: 12.5, label: "vs last month" }} />
         <StatCard title="Fraud Detected" value="492" icon={AlertTriangle} variant="destructive" delay={0.15} subtitle="Real-time detection active" />
         <StatCard title="Amount Protected" value="$2.1M" icon={DollarSign} variant="success" delay={0.2} trend={{ value: 8.3, label: "saved this quarter" }} />
-        <StatCard title="Model Accuracy" value="99.8%" icon={Shield} variant="primary" delay={0.25} subtitle="XGBoost — Best performer" />
+        <StatCard title="Accuracy" value="99.8%" icon={Shield} variant="primary" delay={0.25} subtitle="XGBoost — Best performer" />
       </div>
 
       {/* CTA to Analytics */}
